@@ -3,7 +3,7 @@
 #include <linux/platform_device.h>
 #include <linux/err.h>
 #include <huawei_platform/log/hw_log.h>
-#include <huawei_ts_kit.h>
+#include "huawei_ts_kit.h"
 #include <linux/notifier.h>
 
 #define TP_COLOR_BUF_SIZE		20
@@ -21,8 +21,8 @@ int __init early_parse_tp_color_cmdline(char *arg)
 	if (arg) {
 		len = strlen(arg);
 
-		if (len >= sizeof(tp_color_buf)) {
-			len = sizeof(tp_color_buf)-1;
+		if (len > sizeof(tp_color_buf)) {
+			len = sizeof(tp_color_buf);
 		}
 		memcpy(tp_color_buf, arg, len);
 	} else {
