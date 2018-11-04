@@ -26,7 +26,7 @@
 #include <linux/module.h>
 #include <linux/moduleparam.h>
 #include <linux/seq_file.h>
-#include <slowpath_count.h>
+#include "slowpath_count.h"
 
 #define FIRST_APP_UID KUIDT_INIT(10000)
 #define LAST_APP_UID  KUIDT_INIT(19999)
